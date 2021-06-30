@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+
+  "name": "Test Mood",
+  "description": "Tool for manual testing",
+  "version": "0.0.1",
+  "devtools_page": "devtools.html",
+
+  "action": {
+    "default_icon": "icon.png"
+  },
+
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "128": "icon128.png"
+  },
+
+  "background": {
+    "service_worker": "background-wrapper.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["build/content.js"]
+    }
+  ],
+
+  "permissions": [
+    "desktopCapture",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "*://*/*"
+  ]
+}

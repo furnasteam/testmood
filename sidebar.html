@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Diff</title>
+    <script src="build/sidebar.js"></script>
+    <style>
+        body {
+            min-width: 500px;
+            margin: 16px 24px;
+        }
+
+        .title {
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-size: 18px;
+            color: #333333;
+            letter-spacing: 0;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .row {
+            width: 456px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .card-preview-box {
+            background: #FFFFFF;
+            border: 1px solid rgba(51, 51, 51, 0.3);
+            width: 200px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            padding: 8px;
+        }
+
+        .card-preview-box_active {
+            border-color: rgba(48, 143, 255, 0.3);
+        }
+
+        .card-title {
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-size: 12px;
+            color: #5A5A5A;
+            letter-spacing: 0;
+            line-height: 18px;
+            margin-bottom: 8px;
+            max-width: 200px;
+        }
+
+        .link-style {
+            color: #308FFF;
+            cursor: pointer;
+        }
+
+        .card-preview-text {
+            opacity: 0.6;
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-size: 12px;
+            color: #5A5A5A;
+            letter-spacing: 0;
+            line-height: 18px;
+        }
+
+        .card-address {
+            opacity: 0.3;
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-size: 12px;
+            color: #5A5A5A;
+            letter-spacing: 0;
+        }
+
+        .card-address_active {
+            opacity: 0.6;
+        }
+
+        .result-text {
+            opacity: 0.3;
+            font-family: HelveticaNeue, Arial, sans-serif;
+            font-size: 12px;
+            color: #5A5A5A;
+            letter-spacing: 0;
+            line-height: 18px;
+            pointer-events: none;
+        }
+
+        .result-text_active {
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        .element-img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <h1 class="title">Find diff</h1>
+</div>
+<div class="row">
+    <div class="card">
+        <div class="card-title">1. Select an element and <span class="link-style" id="first-element">click here</span>
+            or
+            <label class="link-style">
+                <input type="file" style="display: none;" accept="image/png" id="first-image-file">
+                upload
+            </label> (PNG file)
+        </div>
+        <div class="card-preview-box" id="first-element-container">
+            <span class="card-preview-text">Preview your element</span>
+        </div>
+        <div class="card-address" id="first-element-address">pageaddress.com</div>
+    </div>
+    <div class="card">
+        <div class="card-title">2. Select an element and <span class="link-style" id="second-element">click here</span>
+            or
+            <label class="link-style">
+                <input type="file" style="display: none;" accept="image/png" id="second-image-file">
+                upload
+            </label> (PNG file)
+        </div>
+        <div class="card-preview-box" id="second-element-container">
+            <span class="card-preview-text">Preview your element</span>
+        </div>
+        <div class="card-address" id="second-element-address">pageaddress.com</div>
+    </div>
+</div>
+<div class="row">
+    <div id="result" class="result-text">3. Result of comparison <span class="link-style" id="compare-and-show">show</span> or <span class="link-style" id="compare-and-download">download</span></div>
+</div>
+</body>
+</html>
